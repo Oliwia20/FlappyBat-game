@@ -1,0 +1,10 @@
+com/oliwia/game/R.java
+ com.oliwia.game.R
+ com.oliwia.game.R$color
+ com.oliwia.game.R$drawable
+ com.oliwia.game.R$string
+ com.oliwia.game.R$style
+com/oliwia/game/BuildConfig.java
+ com.oliwia.game.BuildConfig
+com/oliwia/game/AndroidLauncher.java
+ com.oliwia.game.AndroidLauncher
