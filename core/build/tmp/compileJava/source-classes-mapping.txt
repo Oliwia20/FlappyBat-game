@@ -1,5 +1,5 @@
-com/oliwia/game/states/State.java
- com.oliwia.game.states.State
+com/oliwia/game/states/PlayState.java
+ com.oliwia.game.states.PlayState
 com/oliwia/game/states/GameStateManager.java
  com.oliwia.game.states.GameStateManager
 com/oliwia/game/sprites/Player.java
@@ -8,9 +8,9 @@ com/oliwia/game/sprites/Rocks.java
  com.oliwia.game.sprites.Rocks
 com/oliwia/game/sprites/animation.java
  com.oliwia.game.sprites.animation
-com/oliwia/game/states/PlayState.java
- com.oliwia.game.states.PlayState
 com/oliwia/game/states/MenuState.java
  com.oliwia.game.states.MenuState
+com/oliwia/game/states/State.java
+ com.oliwia.game.states.State
 com/oliwia/game/FlappyBirb.java
  com.oliwia.game.FlappyBirb

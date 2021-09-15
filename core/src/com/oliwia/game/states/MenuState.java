@@ -21,7 +21,7 @@ public class MenuState extends State //rozszerza State ktore jest odpowiedzialne
         bg = new Texture("bg.png");
         playBtn = new Texture("play.png");
         font = new BitmapFont(Gdx.files.internal("font.fnt"),Gdx.files.internal("font.png"),false,true);
-        font.getData().setScale(2);
+        font.getData().setScale(1.2f);
     }
 
     @Override

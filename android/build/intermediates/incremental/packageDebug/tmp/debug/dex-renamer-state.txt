@@ -1,4 +1,4 @@
-#Sun Sep 12 13:11:14 CEST 2021
-base.0=C\:\\Users\\Oliwia\\Desktop\\STUDIA\\II ROK IS\\4Semestr\\KursJava\\ProjektZaliczeniowy\\FlappyBat\\android\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Wed Sep 15 18:09:21 CEST 2021
+base.0=C\:\\Users\\Oliwia\\Desktop\\STUDIA\\II ROK IS\\4Semestr\\KursJava\\JAVA-projekt\\FlappyBat\\android\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

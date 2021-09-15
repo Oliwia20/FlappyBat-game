@@ -39,6 +39,7 @@ public class PlayState extends State
         cam.setToOrtho(false, FlappyBirb.WIDTH/2, FlappyBirb.HEIGHT/2);
         bg = new Texture("bg.png");
         font = new BitmapFont(Gdx.files.internal("font.fnt"),Gdx.files.internal("font.png"),false,true);
+        font.getData().setScale(0.7f);
 
         //rock = new Rocks(100);
         rocks = new Array<Rocks>();
@@ -115,7 +116,7 @@ public class PlayState extends State
         sb.setProjectionMatrix(camHUD.combined); //stabilna kamera ktora pokazuje wynik
         sb.begin();
         font.setColor(1.0f, 1.0f, 1.0f, 1.0f);
-        font.draw(sb, str, -2, FlappyBirb.HEIGHT/3);
+        font.draw(sb, str, -10, FlappyBirb.HEIGHT/3);
         sb.end();
 
     }
