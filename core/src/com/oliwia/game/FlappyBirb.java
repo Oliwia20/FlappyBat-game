@@ -2,6 +2,7 @@ package com.oliwia.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -17,6 +18,7 @@ public class FlappyBirb extends ApplicationAdapter
 	public static final String TITLE = "Flappy Bat";
 	private GameStateManager gsm;
 	private SpriteBatch batch;
+
 
 	//public int score = 2;
 

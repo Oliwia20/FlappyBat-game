@@ -1,6 +1,7 @@
 package com.oliwia.game.states;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,6 +14,7 @@ public class MenuState extends State //rozszerza State ktore jest odpowiedzialne
     private Texture playBtn; // przycisk graj
     private BitmapFont font;
     private String str = "FlappyBat";
+
 
     public MenuState(GameStateManager gsm)
     {
@@ -43,7 +45,7 @@ public class MenuState extends State //rozszerza State ktore jest odpowiedzialne
         sb.setProjectionMatrix(cam.combined);
         //wyswietlenie odpowiednich grafik
         sb.begin();
-        sb.draw(bg,0,0, FlappyBirb.WIDTH, FlappyBirb.HEIGHT);
+        sb.draw(bg,0,0, FlappyBirb.WIDTH*4f, FlappyBirb.HEIGHT*1.2f);
         font.setColor(1.0f, 1.0f, 1.0f, 1.0f);
         font.draw(sb, str, (FlappyBirb.WIDTH/2), FlappyBirb.HEIGHT/1.2f, 0, Align.center, false);
         //sb.draw(bg,cam.position.x-(cam.viewportWidth/2),0);

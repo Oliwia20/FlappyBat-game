@@ -1,6 +1,7 @@
 package com.oliwia.game.states;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,6 +14,8 @@ import com.badlogic.gdx.utils.Array;
 
 public class PlayState extends State
 {
+    Preferences prefs = Gdx.app.getPreferences("highScore");
+
     private Player player;
     private Texture bg;
     private Texture ground;
@@ -24,10 +27,14 @@ public class PlayState extends State
     public static  final int GROUND_OFFSET = -15;
 
     public int score = 0;
+    public int highScore = 0;
     private String scoreName;
+    private String highscoreName;
     //BitmapFont fontName;
     private BitmapFont font;
+    private BitmapFont font2;
     CharSequence str = "";
+    CharSequence str2 = "";
 
     //private Array<Rocks> rocks;
     private Array<Rocks> rocks;
@@ -40,6 +47,8 @@ public class PlayState extends State
         bg = new Texture("bg.png");
         font = new BitmapFont(Gdx.files.internal("font.fnt"),Gdx.files.internal("font.png"),false,true);
         font.getData().setScale(0.7f);
+        font2 = new BitmapFont(Gdx.files.internal("font.fnt"),Gdx.files.internal("font.png"),false,true);
+        font2.getData().setScale(0.3f);
 
         //rock = new Rocks(100);
         rocks = new Array<Rocks>();
@@ -74,8 +83,15 @@ public class PlayState extends State
         for (int i = 0; i < rocks.size; i++) {
             Rocks rock = rocks.get(i);
 
+
             if(cam.position.x - (cam.viewportWidth/2) > rock.getPosStalactite().x + rock.getStalactite().getWidth())
             {
+                if (score > highScore)
+                {
+                    highScore = score;
+                    prefs.putInteger("highScore", highScore);
+                    prefs.flush();
+                }
                 score++; //gdy mine obiekt + 1 do wyniku
                 rock.reposition(rock.getPosStalactite().x + ((Rocks.ROCK_WIDTH + ROCK_SPACING) * ROCK_COUNT));
             }
@@ -86,7 +102,10 @@ public class PlayState extends State
                 score = 0;
             }
         }
+
+        highScore = prefs.getInteger("highScore");
         str = String.valueOf(score);
+        str2 = String.valueOf(highScore);
         if(player.getPos().y <= ground.getHeight() + GROUND_OFFSET) //kolizja przy dotknieciu ziemi
         {
             gsm.set(new MenuState(gsm));
@@ -117,6 +136,8 @@ public class PlayState extends State
         sb.begin();
         font.setColor(1.0f, 1.0f, 1.0f, 1.0f);
         font.draw(sb, str, -10, FlappyBirb.HEIGHT/3);
+        font2.setColor(1.0f, 1.0f, 1.0f, 1.0f);
+        font2.draw(sb, "HIGHSCORE: "+str2, -50, FlappyBirb.HEIGHT/3.5f);
         sb.end();
 
     }
